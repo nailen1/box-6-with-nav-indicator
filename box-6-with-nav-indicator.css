@@ -13,9 +13,11 @@
 
 body {
   overflow: hidden;
+  min-width: 370px;
+  /* overflow:hidden and section height:100vh setting ----> No Loading Site */
 }
 
-section {
+#home {
   position: absolute;
   width: 100%;
   min-height: 100vh;
@@ -26,26 +28,31 @@ section {
   overflow: hidden;
 }
 
-section .color {
+#gift .color,
+#menu .color,
+#home .color {
   position: absolute;
   filter: blur(150px);
 }
-
-section .color:nth-child(1) {
+#gift .color:nth-child(1),
+#menu .color:nth-child(1),
+#home .color:nth-child(1) {
   top: -150px;
   background: #ff359b;
   width: 600px;
   height: 600px;
 }
-
-section .color:nth-child(2) {
+#gift .color:nth-child(2),
+#menu .color:nth-child(2),
+#home .color:nth-child(2) {
   bottom: -150px;
   background: #fffd87;
   width: 500px;
   height: 500px;
 }
-
-section .color:nth-child(3) {
+#gift .color:nth-child(3),
+#menu .color:nth-child(3),
+#home .color:nth-child(3) {
   bottom: -50px;
   background: #00d2ff;
   width: 300px;
@@ -53,12 +60,13 @@ section .color:nth-child(3) {
 }
 
 header {
-  /* border: 1px dashed red; */
+  border: 1px dashed red;
   z-index: 100;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  height: 20vh;
   padding: 30px 100px;
   display: flex;
   flex-direction: column;
@@ -149,14 +157,14 @@ a:visited {
 
 /* ===================================================================== BOX-6 STARTS */
 
-.box-6 {
-  /* border: 1px dashed red; */
-  /* position: absolute; */
-  /* width: 40%; */
-  /* height: 100vh; */
-  /* top: 30%; */
-  /* left: 25%; */
-}
+/* .box-6 {
+  border: 1px dashed red;
+  position: absolute;
+  width: 40%;
+  height: 100vh;
+  top: 30%;
+  left: 25%;
+} */
 
 .box-head {
   position: relative;
@@ -554,4 +562,146 @@ a:visited {
 
 .navigation ul li:nth-child(5).active ~ .indicator {
   transform: translateX(calc(70px * 4));
+}
+
+
+
+#menu {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff4f8b, #dff1ff);
+  overflow: hidden;
+  top: 100vh;
+  border: 1px dashed red;
+}
+
+#gift {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff4f8b, #dff1ff);
+  overflow: hidden;
+  top: 100vh;
+  border: 1px dashed red;
+}
+
+#order {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff4f8b, #dff1ff);
+  overflow: hidden;
+  top: 100vh;
+  border: 1px dashed red;
+}
+
+#contact {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #ff4f8b, #dff1ff);
+  overflow: hidden;
+  top: 100vh;
+  border: 1px dashed red;
+}
+
+
+.product ul {
+  position: relative;
+  display: flex;
+  z-index: 2;
+}
+.product ul li {
+  position: relative;
+  list-style: none;
+  margin: 5px;
+}
+
+.product ul li a {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.product ul li a:hover {
+  transform: translateY(-15px);
+}
+.product ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(45deg) translateX(150px);
+  transition: 0.5s;
+}
+.product ul li a:hover::before {
+  transform: skewX(45deg) translate(-150px);
+}
+
+/* ======================================================= home */
+
+#home .contentBox{
+    position: absolute;
+  top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px dashed red; */
+  height: 73vh;
+  overflow-y: hidden;
+  
+}
+
+#home .contentImg {
+  min-height: 30vh;
+  min-width: 300px;
+  background-image: url(4upt_nrgu_150827\ [Converted].svg);
+  background-repeat: no-repeat;
+  /* background-size: 300px; */
+  background-position: center;
+  margin: 10px 50px;
+  border: 1px dashed green;
+}
+#home .contentText {
+  position: relative;
+  margin: 20px 40px;
+  text-align: center;
+  border: 1px dashed blue;
+  z-index: 0;
+  color: antiquewhite;
+  font-weight: 200;
+  margin: 10px 50px;
+  min-height: 30vh;
+  overflow-y: hidden;
 }
